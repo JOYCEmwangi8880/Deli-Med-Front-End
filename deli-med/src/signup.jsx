@@ -14,8 +14,8 @@ function Signup(){
         name : '',
         age : 0,
         height : 0,
-        bloodType : '',
-        previousIllnesses : ''
+        blood_type : '',
+        previous_illnesses : ''
     }
     // On submit post method
     const onSubmit = (values) => {
@@ -41,8 +41,8 @@ function Signup(){
         name: yup.string().required('Enter name'),
         age: yup.number().integer().required('Enter age. Must be a positive number'),
         height: yup.number().required('Enter height in meters'),
-        bloodType: yup.string().required('choose one of the options'),
-        previousIllnesses: yup.string(),
+        blood_type: yup.string().required('choose one of the options'),
+        previous_illnesses: yup.string(),
     })
      //including the variables into the useFormik hook
     const formik = useFormik({
@@ -120,31 +120,31 @@ function Signup(){
                    
                     <label htmlFor="bloodType">Blood Type:</label>
                     <select
-                        id="bloodType"
-                        name="bloodType"
+                        id="blood_type"
+                        name="blood_type"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.bloodType}
+                        value={formik.values.blood_type}
                     >
                         <option value="" label="Select type" />
                         {optionsBloodGroups.map((option) => (
                             <option key={option} value={option} label={option} />
                         ))}
                     </select>
-                    {formik.touched.bloodType && formik.errors.bloodType && (
-                        <div>{formik.errors.bloodType}</div>
+                    {formik.touched.blood_type && formik.errors.blood_type && (
+                        <div>{formik.errors.blood_type}</div>
                     )}
             
                                     
                                        
                     <label htmlFor = 'previousIllnesses'> Previous Illness </label>                    
                     <input
-                        id = 'previousIllnesses'
-                        name = 'previousIllnesses'
+                        id = 'previous_illnesses'
+                        name = 'previous_illnesses'
                         onChange = {formik.handleChange}
-                        value = {formik.values.previousIllnesses}
+                        value = {formik.values.previous_illnesses}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.previousIllnesses}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.previous_illnesses}</p>
 
                     
                     <button type="submit">Signup</button>

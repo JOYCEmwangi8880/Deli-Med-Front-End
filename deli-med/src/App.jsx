@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import NavBar from './Components/NavBar'
 
 import './App.css'
 
@@ -10,11 +11,13 @@ function App() {
       <div>
       
       </div>
-      <h1>Welcone to DELI-MED pharmacy</h1>
+      <h1>👋!Welcome to DELI-MED pharmacy</h1>
      
-      <p className="read-the-docs">
-        Where you get to feel better!!!
+      <p className="message">
+        Where you get to feel better 😊!!!
       </p>
+
+      <NavBar></NavBar>
     </>
   )
 }

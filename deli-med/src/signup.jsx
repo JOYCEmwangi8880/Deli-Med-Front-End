@@ -43,8 +43,6 @@ function Signup(){
         height: yup.number().required('Enter height in meters'),
         blood_type: yup.string().required('choose one of the options'),
         previous_illnesses: yup.string(),
-
-        
     })
      //including the variables into the useFormik hook
     const formik = useFormik({
@@ -133,6 +131,20 @@ function Signup(){
                             <option key={option} value={option} label={option} />
                         ))}
                     </select>
+                    {formik.touched.blood_type && formik.errors.blood_type && (
+                        <div>{formik.errors.blood_type}</div>
+                    )}
+            
+                                    
+                                       
+                    <label htmlFor = 'previousIllnesses'> Previous Illness </label>                    
+                    <input
+                        id = 'previous_illnesses'
+                        name = 'previous_illnesses'
+                        onChange = {formik.handleChange}
+                        value = {formik.values.previous_illnesses}
+                    />
+                    <p style = {{color: 'red'}}>{formik.errors.previous_illnesses}</p>
 
                     {formik.touched.blood_type && formik.errors.blood_type && (
                         <div>{formik.errors.blood_type}</div>

@@ -8,14 +8,14 @@ function Signup(){
     const optionsBloodGroups = ['A', 'B', 'AB', 'O'];
     //Values before form filling
     const initialValues = {
-        username= '',
-        email= '',
-        password= '',
-        name= '',
-        age= 0,
-        height= 0,
-        bloodType= ''
-        previousIllnesses= ''
+        username : '',
+        email : '',
+        password : '',
+        name : '',
+        age : 0,
+        height : 0,
+        bloodType : '',
+        previousIllnesses : ''
     }
     // On submit post method
     const onSubmit = (values) => {
@@ -39,8 +39,8 @@ function Signup(){
         email: yup.string().email('Invalid email').required('Must enter email'),
         password: yup.string().required('Must enter password'),
         name: yup.string().required('Enter name'),
-        age: yup.integer().required('Enter age. Must be a positive number'),
-        height: yup.float().required('Enter height in meters'),
+        age: yup.number().integer().required('Enter age. Must be a positive number'),
+        height: yup.number().required('Enter height in meters'),
         bloodType: yup.string().required('choose one of the options'),
         previousIllnesses: yup.string(),
     })
@@ -63,9 +63,9 @@ function Signup(){
                         id = 'username'
                         name = 'username'
                         onChange = {formik.handleChange}
-                        value = {formik.values.firstName}
+                        value = {formik.values.username}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.firstName}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.username}</p>
 
                    
 
@@ -74,48 +74,48 @@ function Signup(){
                         id = 'email'
                         name = 'email'
                         onChange = {formik.handleChange}
-                        value = {formik.values.secondName}
+                        value = {formik.values.email}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.secondName}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.email}</p>
 
                    
-                    <label htmlFor = 'password'> Phone-Number </label>                    
+                    <label htmlFor = 'password'> Password </label>                    
                     <input
                         id = 'password'
                         name = 'password'
                         onChange = {formik.handleChange}
-                        value = {formik.values.phoneNumber}
+                        value = {formik.values.password}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.phoneNumber}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.password}</p>
 
 
-                    <label htmlFor = 'name'> Phone-Number </label>                    
+                    <label htmlFor = 'name'> Name </label>                    
                     <input
                         id = 'name'
                         name = 'name'
                         onChange = {formik.handleChange}
-                        value = {formik.values.phoneNumber}
+                        value = {formik.values.name}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.phoneNumber}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.name}</p>
 
 
-                    <label htmlFor = 'age'> Phone-Number </label>                    
+                    <label htmlFor = 'age'> Age </label>                    
                     <input
                         id = 'age'
                         name = 'age'
                         onChange = {formik.handleChange}
-                        value = {formik.values.phoneNumber}
+                        value = {formik.values.age}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.phoneNumber}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.age}</p>
 
-                    <label htmlFor = 'height'> Phone-Number </label>                    
+                    <label htmlFor = 'height'> Height </label>                    
                     <input
                         id = 'height'
                         name = 'height'
                         onChange = {formik.handleChange}
-                        value = {formik.values.phoneNumber}
+                        value = {formik.values.height}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.phoneNumber}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.height}</p>
 
                    
                     <label htmlFor="bloodType">Blood Type:</label>
@@ -124,15 +124,15 @@ function Signup(){
                         name="bloodType"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.grade}
+                        value={formik.values.bloodType}
                     >
                         <option value="" label="Select type" />
-                        {optionsGrade.map((option) => (
+                        {optionsBloodGroups.map((option) => (
                             <option key={option} value={option} label={option} />
                         ))}
                     </select>
-                    {formik.touched.grade && formik.errors.grade && (
-                        <div>{formik.errors.grade}</div>
+                    {formik.touched.bloodType && formik.errors.bloodType && (
+                        <div>{formik.errors.bloodType}</div>
                     )}
             
                                     
@@ -142,9 +142,9 @@ function Signup(){
                         id = 'previousIllnesses'
                         name = 'previousIllnesses'
                         onChange = {formik.handleChange}
-                        value = {formik.values.email}
+                        value = {formik.values.previousIllnesses}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.email}</p>
+                    <p style = {{color: 'red'}}>{formik.errors.previousIllnesses}</p>
 
                     
                     <button type="submit">Signup</button>

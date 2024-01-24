@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Signup from './signup'
 
 import './App.css'
 
@@ -15,6 +16,9 @@ function App() {
       <p className="read-the-docs">
         Where you get to feel better!!!
       </p>
+      <div>
+        <Signup />
+      </div>
     </>
   )
 }

@@ -1,6 +1,9 @@
-// Import necessary dependencies
+
+import { useState } from 'react'
+import Signup from './signup'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 // Import your components
 import NavBar from './Components/NavBar';
@@ -30,8 +33,21 @@ function App() {
           {/* Add other routes as needed */}
         </Routes>
       </div>
+
+      <h1>Welcone to DELI-MED pharmacy</h1>
+     
+      <p className="read-the-docs">
+        Where you get to feel better!!!
+      </p>
+      <div>
+        <Signup />
+      </div>
+    </>
+  )
+
     </Router>
   );
+
 }
 
 export default App;

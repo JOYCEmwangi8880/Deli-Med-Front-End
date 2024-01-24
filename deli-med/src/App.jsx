@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Signup from './signup'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState } from 'react'
 
 
 // Import your components
@@ -42,9 +43,6 @@ function App() {
       <div>
         <Signup />
       </div>
-    </>
-  )
-
     </Router>
   );
 

@@ -15,7 +15,7 @@ function Signup(){
         age : 0,
         height : 0,
         blood_type : '',
-        previous_illnesses : ''
+        previous_illnesses : '',
     }
     // On submit post method
     const onSubmit = (values) => {
@@ -137,7 +137,7 @@ function Signup(){
             
                                     
                                        
-                    <label htmlFor = 'previousIllnesses'> Previous Illness </label>                    
+                    <label htmlFor = 'previous_illnesses'> Previous Illness </label>                    
                     <input
                         id = 'previous_illnesses'
                         name = 'previous_illnesses'

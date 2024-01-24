@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import UserProfile from './UserProfile'
 
 import './App.css'
+import UserProfile from './UserProfile'
 
 function App() {
   
@@ -14,6 +16,10 @@ function App() {
      
       <p className="read-the-docs">
         Where you get to feel better!!!
+
+        <div>
+          <UserProfile/>
+        </div>
       </p>
     </>
   )

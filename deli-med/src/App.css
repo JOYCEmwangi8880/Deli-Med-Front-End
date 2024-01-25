@@ -1,5 +1,5 @@
 body {
-  width: 100vw;
+  width: 95vw;
   height: 100vh;
   background-image: url(/image/med.jpg);
   background-position: center; 
@@ -7,15 +7,23 @@ body {
   background-repeat: no-repeat; 
 }
 
+
 h1 {
-  color:black;
+  color: black;
   font-weight: bolder;
-  font-size:  3em;
+  font-size: 3em;
   text-align: center;
   margin-top: 1%;
   font-style: italic;
-
+  margin-right: 36%;
+ 
 }
+
+h1:hover {
+  color: yellow;
+}
+
+
 .message {
   color: blue;
   text-align: center;
@@ -23,14 +31,44 @@ h1 {
   font-size: 2em;
   margin-top: 1%;
   font-style: italic;
+  margin-right:35% ;
   
 }
-.navbar{
-  color: black;
+
+
+
+.navbar {
   padding: 10px 0;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 8%;
 }
-.container{
+
+.container {
   display: flex;
-  justify-content: space-between;
-  
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+}
+
+.navbar-links li {
+  margin: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+  font-size: x-large;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: white;
 }

@@ -14,7 +14,7 @@ function App() {
       <h1>👋!Welcome to DELI-MED pharmacy</h1>
      
       <p className="message">
-        Where you get to feel better 😊!!!
+      Where healing is close to home! 😊!!!
       </p>
 
       <NavBar></NavBar>

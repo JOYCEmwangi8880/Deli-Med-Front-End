@@ -89,4 +89,100 @@ h1:hover {
 
 .navbar-links li:hover .hover-content {
   display: block;
+  
+}
+
+/* Add this to your CSS file or style tag in your React component */
+.studentRegistrationForm {
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.studentRegistrationForm h1 {
+  margin-bottom: 20px;
+}
+
+.studentRegistrationForm label {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.studentRegistrationForm input,
+.studentRegistrationForm select {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.signup-btn {
+  width: 90%;
+  padding: 12px;
+  background-color: #27ae60;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-weight: bold; 
+  font-size: large;
+}
+
+.signup-btn:hover {
+  background-color: purple;
+}
+
+.studentRegistrationForm p {
+  color: red;
+  margin-bottom: 6px;
+}
+
+.navigation-container {
+  text-align: center;
+  margin-top: 25%;
+}
+
+.navigation-link {
+  margin-right: 18%;
+  text-decoration: none;
+  color: greenyellow;
+  font-weight:bolder;
+  font-size: xx-large;
+}
+
+
+/* Add your custom styles here */
+.login-container {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin-top: 2%;
+  
+}
+
+
+input {
+  padding: 15px;
+  margin: 15px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 8%;
+
+}
+
+button {
+  background-color: #4CAF50;
+  color: black;
+  padding: 22px 33px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  
 }

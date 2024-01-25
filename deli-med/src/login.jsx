@@ -7,16 +7,19 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/login', {
+      const response = await axios.post('http://127.0.0.1:5000/auth/login', {
         username: username,
         password: password,
       });
 
-      console.log(response.data.message); 
+      console.log(response.data.message);
+
+    
     } catch (error) {
-      console.error(error.response.data.message); 
+      console.error(error.response.data.message);
     }
   };
+
   return (
     <div>
       <h1>Login</h1>

@@ -51,11 +51,11 @@ function Signup(){
         onSubmit: onSubmit,
         });
 
-    return(
-        <>
-            <h1>New User enrollment</h1>
-            <div className = 'studentRegistrationForm'>
-                <form onSubmit = {formik.handleSubmit} style = {{margin : '30px'}}>
+        return (
+            <>
+              
+              <div className='studentRegistrationForm'>
+                <form onSubmit={formik.handleSubmit} style={{ margin: '30px' }}>
                   
                    
                     <label htmlFor = 'username'> User Name </label>
@@ -147,8 +147,8 @@ function Signup(){
                     <p style = {{color: 'red'}}>{formik.errors.previous_illnesses}</p>
 
                     
-                    <button type="submit">Signup</button>
-                </form>
+                    <button type="submit" className="signup-btn">Signup</button>
+      </form>
             </div>
         </>
     )

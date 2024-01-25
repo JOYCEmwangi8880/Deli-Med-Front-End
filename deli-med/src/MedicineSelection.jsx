@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
-function IllnessDropdown() {
-    const [selectedIllness, setSelectedIllness] = useState("");
-    const [illnesses, setIllnesses] = useState([]);
+function MedicineSelection({ selectedIllness, user }) {
     const [medicines, setMedicines] = useState([]);
     const [selectedMedicine, setSelectedMedicine] = useState(null);
     const [quantity, setQuantity] = useState(1);
@@ -12,19 +9,9 @@ function IllnessDropdown() {
     const [deliveryAddress, setDeliveryAddress] = useState("");
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000//illnesses') 
-            .then(response => {
-                setIllnesses(response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching illness data', error);
-            });
-    }, []);
-
-    useEffect(() => {
         if (!selectedIllness) return;
 
-        axios.get(`http://127.0.0.1:500/illnesses/${selectedIllness}/medicines`) 
+        axios.get(`http://127.0.0.1:5000/illnesses/${selectedIllness}/medicines`)
             .then(response => {
                 setMedicines(response.data);
             })
@@ -33,18 +20,10 @@ function IllnessDropdown() {
             });
     }, [selectedIllness]);
 
-    const handleIllnessChange = (event) => {
-        setSelectedIllness(event.target.value);
-    };
-
-    const handleMedicineChange = (event) => {
-        setSelectedMedicine(event.target.value);
-        setTotalPrice(event.target.value * event.target.dataset.price);
-    };
-
     const handleQuantityChange = (event) => {
         setQuantity(event.target.value);
-        setTotalPrice(event.target.value * selectedMedicine.price);
+        // Update the total price based on the selectedMedicine's price
+        setTotalPrice(event.target.value * (selectedMedicine ? selectedMedicine.price : 0));
     };
 
     const handleDeliveryAddressChange = (event) => {
@@ -52,9 +31,11 @@ function IllnessDropdown() {
     };
 
     const handleOrderClick = () => {
+        // Assuming you have user information stored in state or context
+        // Replace User.id with the correct reference to the user ID
         axios.post('http://127.0.0.1:5000/orders', {
-            userId: userId,
-            medicineId: selectedMedicine.id,
+            userId: user.id,
+            medicineId: selectedMedicine ? selectedMedicine.id : null,
             quantity: quantity,
             totalPrice: totalPrice,
             deliveryAddress: deliveryAddress
@@ -69,19 +50,6 @@ function IllnessDropdown() {
 
     return (
         <div>
-            <button onClick={handleCommonIllnessesClick}>Common Illnesses Encountered</button>
-            <label>
-                Select an Illness:
-                <select value={selectedIllness} onChange={handleIllnessChange}>
-                    <option value="">--Select Illness--</option>
-                    {illnesses.map((illness, index) => (
-                        <option key={index} value={illness.name}>
-                            {illness.name}
-                        </option>
-                    ))}
-                </select>
-            </label>
-            <div>{selectedIllness && <p>Selected Illness: {selectedIllness}</p>}</div>
             {medicines.map((medicine, index) => (
                 <div key={index}>
                     <img src={medicine.image} alt={medicine.name} />
@@ -97,4 +65,4 @@ function IllnessDropdown() {
     );
 }
 
-export default IllnessDropdown;
+export default MedicineSelection;

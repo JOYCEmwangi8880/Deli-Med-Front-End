@@ -1,28 +1,38 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom'; 
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+ const [username, setUsername] = useState('');
+ const [password, setPassword] = useState('');
+ const navigate = useNavigate(); 
 
-  const handleLogin = async () => {
+ const handleLogin = async () => {
     try {
       const response = await axios.post('http://127.0.0.1:5000/auth/login', {
         username: username,
         password: password,
       });
-
-      console.log(response.data.message);
-
     
-    } catch (error) {
-      console.error(error.response.data.message);
-    }
-  };
+      
+     localStorage.setItem('name', response.data.user_data.name)
+     localStorage.setItem('age', response.data.user_data.age)
+     localStorage.setItem('email', response.data.user_data.email)
+     localStorage.setItem('height', response.data.user_data.height)
+     localStorage.setItem('username', response.data.user_data.username)
+     
 
+      navigate('/ProfilePage'); 
+
+    } catch (error) {
+      console.error(error);
+    }
+ };
+
+ 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="login-container">
+      
       <input
         type="text"
         placeholder="Username"
@@ -39,5 +49,6 @@ const Login = () => {
     </div>
   );
 };
+
 
 export default Login;

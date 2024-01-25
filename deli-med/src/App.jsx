@@ -1,8 +1,12 @@
 
 import { useState } from 'react'
+import UserProfile from './UserProfile'
+import './App.css'
+import UserProfile from './UserProfile'
 import Signup from './signup'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 
 // Import your components
@@ -38,6 +42,10 @@ function App() {
      
       <p className="read-the-docs">
         Where you get to feel better!!!
+
+        <div>
+          <UserProfile/>
+        </div>
       </p>
       <div>
         <Signup />

@@ -1,40 +1,63 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Signup from './signup';
 import Login from './login';
-import SignUp from './signup';
-import UserProfile from './UserProfile';
-import NavBar from './Components/NavBar';
-import About from './Components/About';
-import Services from './Components/Services';
-import Contacts from './Components/Contacts';
+import ProfilePage from './ProfilePage';
+import NavBar from './NavBar';
+import About from './About';
+import Services from './Services';
+import Contacts from './Contacts';
+import MedicineSelection  from './MedicineSelection';
+import TreatmentOptions from './TreatmentOptions';
+import './App.css';
+
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div>
+        <h1>👋!Welcome to DELI-MED pharmacy</h1>
+        <p className="message">Where healing is close to home! 😊!!!</p>
+
         <NavBar />
-        <div className="content">
-          <h1>👋!Welcome to DELI-MED pharmacy</h1>
-          <p className="message">Where healing is close to home! 😊!!!</p>
-          <div id='div'>
-          <Routes>
+
+        <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contacts" element={<Contacts />} />
+
+          {/* Add other routes as needed */}
+
+          {/* Route for SignUp */}
+          <Route path="/signup" element={<Signup />} />
+
+          {/* Route for Login */}
+          <Route path="/login" element={<Login />} />
+          
+          <Route path="/ProfilePage" element={<ProfilePage />} />
+
+                <Route path="/medicine-selection" component={MedicineSelection} />
+                <Route path="/treatment-options" component={TreatmentOptions} />
+
+        
+          {/* Default Route (you can redirect it to home or any other page) */}
+          <Route path="/" element={<Home />} />
         </Routes>
-            </div>
-        </div>
       </div>
     </Router>
   );
 }
 
+// Placeholder component for Home
 function Home() {
   return (
-    <div>
-      <h1>Welcone to DELI-MED pharmacy</h1>
-      <p className="read-the-docs">Where you get to feel better!!!</p>
+<div className="navigation-container">
+      <Link to="/signup" className="navigation-link">
+        Signup
+      </Link>
+      <Link to="/login" className="navigation-link">
+        Login
+      </Link>
     </div>
   );
 }

@@ -9,6 +9,8 @@ import Services from './Services';
 import Contacts from './Contacts';
 import MedicineSelection  from './MedicineSelection';
 import TreatmentOptions from './TreatmentOptions';
+import './App.css';
+
 
 function App() {
   return (

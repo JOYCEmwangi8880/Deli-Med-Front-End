@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
+
 import axios from 'axios';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/login', {
+      const response = await axios.post('http://127.0.0.1:5000/auth/login', {
         username: username,
         password: password,
       });
+     
+      console.log(response.data.message);
+      
+     
 
-      console.log(response.data.message); 
     } catch (error) {
-      console.error(error.response.data.message); 
+      console.error(error.response.data.message);
     }
   };
 

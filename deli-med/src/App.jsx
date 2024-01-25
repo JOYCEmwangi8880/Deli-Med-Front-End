@@ -20,6 +20,7 @@ import './App.css';
 
 function App() {
   return (
+    <>
     <Router>
       <div>
         {/* Your other components */}
@@ -50,11 +51,11 @@ function App() {
       <div>
         <Signup />
       </div>
+      </Router>
     </>
   )
 
-    </Router>
-  );
+  
 
 }
 

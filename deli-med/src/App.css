@@ -72,3 +72,21 @@ h1:hover {
 .navbar-links a:hover {
   color: white;
 }
+
+
+.hover-content {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color:green; 
+  border: 1px solid purple; 
+  padding: 12px;
+  display: none;
+  font-weight: bold;
+  font-size: large;
+  
+}
+
+.navbar-links li:hover .hover-content {
+  display: block;
+}

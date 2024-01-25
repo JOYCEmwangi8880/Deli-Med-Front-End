@@ -10,10 +10,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 // Import your components
-import NavBar from './Components/NavBar';
-import About from './Components/About';
-import Services from './Components/Services';
-import Contacts from './Components/Contacts';
+import NavBar from './NavBar';
+import About from './About';
+import Services from './Services';
+import Contacts from './Contacts';
 
 // Import your CSS
 import './App.css';

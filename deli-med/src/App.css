@@ -7,8 +7,6 @@ body {
   background-repeat: no-repeat; 
 }
 
-
-
 h1 {
   color:black;
   font-weight: bolder;
@@ -32,6 +30,7 @@ h1 {
   padding: 10px 0;
 }
 .container{
-  display:flex;
+  display: flex;
+  justify-content: space-between;
   
 }

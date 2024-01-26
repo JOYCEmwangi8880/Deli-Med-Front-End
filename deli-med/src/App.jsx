@@ -7,6 +7,7 @@ import NavBar from './NavBar';
 import About from './About';
 import Services from './Services';
 import Contacts from './Contacts';
+import Logout from './logout';
 
 import TreatmentOptions from './TreatmentOptions';
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           
           <Route path="/ProfilePage" element={<ProfilePage />} />
+          <Route path="/logout" element={Logout} />
 
                 {/* <Route path="/medicine-selection" Component={MedicineSelection} /> */}
                 <Route path="/treatment-options" Component={TreatmentOptions} />

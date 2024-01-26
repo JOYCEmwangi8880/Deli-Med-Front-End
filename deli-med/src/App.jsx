@@ -9,7 +9,7 @@ import Services from './Services';
 import Contacts from './Contacts';
 
 import TreatmentOptions from './TreatmentOptions';
-// import SearchBar from './SearchBar';
+
 
 import './App.css';
 
@@ -22,8 +22,8 @@ function App() {
         <p className="message">Where healing is close to home! 😊!!!</p>
 
         <NavBar />
-       {/* <SearchBar/>
-       <OrderDetails/> */}
+        
+       
        
         <Routes>
           <Route path="/about" element={<About />} />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 function ProfilePage() {
     const [user, setUser] = useState(null);
 
@@ -32,19 +33,25 @@ function ProfilePage() {
 
     return (
         <div>
-            <h1>Welcome, {localStorage.getItem('name')}!</h1>
-            <p>Username: {localStorage.getItem('username')}</p>
-            <p>Email: {localStorage.getItem('email')}</p>
-            
-            <p>Age: {localStorage.getItem('age')}</p>
-            <p>Height: {localStorage.getItem('height')}</p>
+          <div className="card-container">
+    <div className="card">
+      
+      <h1>Welcome, {localStorage.getItem('name')}!</h1>
+      <p>Username: {localStorage.getItem('username')}</p>
+      <p>Email: {localStorage.getItem('email')}</p>
+      <p>Age: {localStorage.getItem('age')}</p>
+      <p>Height: {localStorage.getItem('height')}</p>
+    </div>
+  </div>
             
            
-            <div className="buttonContainer">
+            
       <button>
         <Link to="/treatment-options" className="NavLink">Health Conditions</Link>
       </button>
-    </div>
+
+      
+   
 
 
 

@@ -40,9 +40,15 @@ function ProfilePage() {
             <p>Height: {localStorage.getItem('height')}</p>
             
            
+            <div className="buttonContainer">
+      <button>
+        <Link to="/treatment-options" className="NavLink">Health Conditions</Link>
+      </button>
+    </div>
 
-            <Link to="/treatment-options">View Treatment Options</Link>
-            <Link to="/medicine-selection">Select Medicine</Link>
+
+
+
      <button onClick={handleLogout}>Logout</button> 
      
         </div>

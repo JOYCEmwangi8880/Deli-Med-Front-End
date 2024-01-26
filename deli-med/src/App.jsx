@@ -7,8 +7,10 @@ import NavBar from './NavBar';
 import About from './About';
 import Services from './Services';
 import Contacts from './Contacts';
-import MedicineSelection  from './MedicineSelection';
+
 import TreatmentOptions from './TreatmentOptions';
+// import SearchBar from './SearchBar';
+
 import './App.css';
 
 
@@ -20,7 +22,9 @@ function App() {
         <p className="message">Where healing is close to home! 😊!!!</p>
 
         <NavBar />
-
+       {/* <SearchBar/>
+       <OrderDetails/> */}
+       
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
@@ -36,8 +40,8 @@ function App() {
           
           <Route path="/ProfilePage" element={<ProfilePage />} />
 
-                <Route path="/medicine-selection" component={MedicineSelection} />
-                <Route path="/treatment-options" component={TreatmentOptions} />
+                {/* <Route path="/medicine-selection" Component={MedicineSelection} /> */}
+                <Route path="/treatment-options" Component={TreatmentOptions} />
 
         
           {/* Default Route (you can redirect it to home or any other page) */}

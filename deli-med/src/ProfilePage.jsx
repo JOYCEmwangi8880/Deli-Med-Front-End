@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 
+
 function ProfilePage() {
     const [user, setUser] = useState(null);
 
@@ -34,7 +35,7 @@ function ProfilePage() {
 
     const deleteUser = async () => {
         const userId = localStorage.getItem('id');
-        const navigate = useNavigate();
+        
     
         try {
           const response = await fetch(`http://127.0.0.1:5000/users/${userId}`, {
@@ -46,7 +47,9 @@ function ProfilePage() {
     
           if (response.ok) {
             alert('Profile Deleted Successfully');
-            navigate('/signup');
+            window.location.href = "/signup"
+            
+            
           } else {
             console.error('Failed to delete user:', response.status, response.statusText);
           }

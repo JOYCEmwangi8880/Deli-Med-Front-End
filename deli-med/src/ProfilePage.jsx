@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 function ProfilePage() {
     const [user, setUser] = useState(null);
 
@@ -64,6 +65,7 @@ function ProfilePage() {
 
      <button onClick={handleLogout}>Logout</button> 
      {/* <button onClick={handleEditProfile}>Edit Profile</button> */}
+     
      
         </div>
     );

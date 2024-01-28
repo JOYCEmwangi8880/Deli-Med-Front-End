@@ -7,7 +7,7 @@ import NavBar from './NavBar';
 import About from './About';
 import Services from './Services';
 import Contacts from './Contacts';
-import MedicineSelection  from './MedicineSelection';
+import PlaceOrder  from './PlaceOrder';
 import TreatmentOptions from './TreatmentOptions';
 import './App.css';
 
@@ -36,8 +36,8 @@ function App() {
           
           <Route path="/ProfilePage" element={<ProfilePage />} />
 
-                <Route path="/medicine-selection" component={MedicineSelection} />
-                <Route path="/treatment-options" component={TreatmentOptions} />
+          <Route path="/PlaceOrder" element={<PlaceOrder/>} />
+          <Route path="/treatment-options" element={<TreatmentOptions/>} />
 
         
           {/* Default Route (you can redirect it to home or any other page) */}

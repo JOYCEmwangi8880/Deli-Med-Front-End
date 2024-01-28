@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
+import { Link } from 'react-router-dom';
 
 function Signup(){
     //refresh age on submit
@@ -32,6 +33,7 @@ function Signup(){
             }
         });
         console.log(values)
+        window.alert("Sign up successful!")
     };
     //setting the rules for validation using formik
     const formSchema = yup.object().shape({
@@ -148,6 +150,8 @@ function Signup(){
 
                     
                     <button type="submit" className="signup-btn">Signup</button>
+                    <Link to="/login">Proceed to: Log in!</Link>
+                    
       </form>
             </div>
         </>

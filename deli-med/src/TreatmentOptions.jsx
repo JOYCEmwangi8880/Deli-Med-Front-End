@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 function TreatmentOptions() {
-    const [selectedIllness, setSelectedIllness] = useState("");
     const [illnesses, setIllnesses] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/illnesses') 
+        axios.get('http://127.0.0.1:5000/illnesses')
             .then(response => {
                 setIllnesses(response.data);
             })
@@ -15,25 +16,24 @@ function TreatmentOptions() {
             });
     }, []);
 
-    const handleIllnessChange = (event) => {
-        setSelectedIllness(event.target.value);
-    };
+    function handleClick(illnessId) {
+        navigate(`/PlaceOrder?illnessId=${illnessId}`);
+    }
 
     return (
         <div>
-            <label>
-                Select an Illness:
-                <select value={selectedIllness} onChange={handleIllnessChange}>
-                    <option value="">--Select Illness--</option>
-                    {illnesses.map((illness, index) => (
-                        <option key={index} value={illness.name}>
-                            {illness.name}
-                        </option>
-                    ))}
-                </select>
-            </label>
+            <h2>Select an Illness:</h2>
+            <div>
+                {illnesses.map((illness) => (
+                    <div key={illness.id}>
+                        <p>{illness.id}</p>
+                        <h1>{illness.name}</h1>
+                        <p>{illness.description}</p>
+                        <button onClick={() => handleClick(illness.id)}>Check out our prescription </button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
-
 export default TreatmentOptions;

@@ -32,17 +32,13 @@ function ProfilePage() {
 
     return (
         <div>
-            <h1>Welcome, {localStorage.getItem('name')}!</h1>
+            <h1>Welcome, {localStorage.getItem('name')}</h1>
             <p>Username: {localStorage.getItem('username')}</p>
             <p>Email: {localStorage.getItem('email')}</p>
             
             <p>Age: {localStorage.getItem('age')}</p>
             <p>Height: {localStorage.getItem('height')}</p>
-            
-           
-
             <Link to="/treatment-options">View Treatment Options</Link>
-            <Link to="/medicine-selection">Select Medicine</Link>
      <button onClick={handleLogout}>Logout</button> 
      
         </div>

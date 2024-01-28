@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
+
 function ProfilePage() {
     const [user, setUser] = useState(null);
 
@@ -32,14 +34,39 @@ function ProfilePage() {
 
     return (
         <div>
-            <h1>Welcome, {localStorage.getItem('name')}</h1>
-            <p>Username: {localStorage.getItem('username')}</p>
-            <p>Email: {localStorage.getItem('email')}</p>
+     <div className="card-container">
+    <div className="card">
+      
+      <h1>Welcome, {localStorage.getItem('name')}!</h1>
+      <p>Username: {localStorage.getItem('username')}</p>
+      <p>Email: {localStorage.getItem('email')}</p>
+      <p>Age: {localStorage.getItem('age')}</p>
+      <p>Height: {localStorage.getItem('height')}</p>
+
+      <button>
+        <Link to="/edit-profile" className="NavLink">edit profile</Link>
+      </button>
+    </div>
+  </div>
             
-            <p>Age: {localStorage.getItem('age')}</p>
-            <p>Height: {localStorage.getItem('height')}</p>
-            <Link to="/treatment-options">View Treatment Options</Link>
+           
+            
+      <button>
+        <Link to="/treatment-options" className="NavLink">Health Conditions</Link>
+      </button>
+
+
+
+      
+   
+
+
+
+
+
      <button onClick={handleLogout}>Logout</button> 
+     {/* <button onClick={handleEditProfile}>Edit Profile</button> */}
+     
      
         </div>
     );

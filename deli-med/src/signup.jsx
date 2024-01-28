@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
+
 import { Link } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
+
 
 function Signup(){
     //refresh age on submit
     const[refreshPage, setRefreshPage] = useState(false);
     const optionsBloodGroups = ['A', 'B', 'AB', 'O'];
+    const navigate = useNavigate()
     //Values before form filling
     const initialValues = {
         username : '',
@@ -28,12 +32,16 @@ function Signup(){
             body: JSON.stringify(values),
         })
         .then ((res) => {
-            if (res.status == 200) {
-                setRefreshPage(!refreshPage);
+            if (res.status == 201) {
+                console.log(res)
+                alert('Profile Created Succefully');
+                navigate('/login')
             }
         });
+
         console.log(values)
         window.alert("Sign up successful!")
+
     };
     //setting the rules for validation using formik
     const formSchema = yup.object().shape({
@@ -75,6 +83,7 @@ function Signup(){
                     <input
                         id = 'email'
                         name = 'email'
+                        type = 'email'
                         onChange = {formik.handleChange}
                         value = {formik.values.email}
                     />
@@ -85,6 +94,7 @@ function Signup(){
                     <input
                         id = 'password'
                         name = 'password'
+                        type='password'
                         onChange = {formik.handleChange}
                         value = {formik.values.password}
                     />

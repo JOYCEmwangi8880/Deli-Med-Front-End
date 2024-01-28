@@ -1,0 +1,4 @@
+[submodule "Deli-Med-Back-End"]
+	path = Deli-Med-Back-End
+	url = https://github.com/JOYCEmwangi8880/Deli-Med-Back-End.git
+	branch = main

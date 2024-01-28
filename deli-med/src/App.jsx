@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Signup from './signup';
 import Login from './login';
+import Logout from './logout';
 import ProfilePage from './ProfilePage';
 import NavBar from './NavBar';
 import About from './About';
@@ -9,6 +10,8 @@ import PreviousOrders from './PreviousOrders'
 import Services from './Services';
 import Contacts from './Contacts';
 import PlaceOrder  from './PlaceOrder';
+import EditProfile from './EditProfile';
+import MedicineSelection  from './MedicineSelection';
 import TreatmentOptions from './TreatmentOptions';
 import './App.css';
 
@@ -35,10 +38,20 @@ function App() {
           {/* Route for Login */}
           <Route path="/login" element={<Login />} />
           
+          <Route path="/logout" element={<Logout />} />
+
           <Route path="/ProfilePage" element={<ProfilePage />} />
+
           <Route path="/PreviousOrders" element={<PreviousOrders/>} />
           <Route path="/PlaceOrder" element={<PlaceOrder/>} />
-          <Route path="/treatment-options" element={<TreatmentOptions/>} />
+         
+
+
+
+                {/* <Route path="/medicine-selection" Component={MedicineSelection} /> */}
+                <Route path="/treatment-options" Component={TreatmentOptions} />
+                <Route path="/edit-profile" Component={EditProfile} />
+                <Route path="/medicine-selection" Component={MedicineSelection} />
 
         
           {/* Default Route (you can redirect it to home or any other page) */}
@@ -58,6 +71,9 @@ function Home() {
       </Link>
       <Link to="/login" className="navigation-link">
         Login
+      </Link>
+      <Link to="/logout" className="navigation-link">
+        Logout
       </Link>
     </div>
   );

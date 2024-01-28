@@ -1,6 +1,6 @@
 body {
-  width: 95vw;
-  height: 100vh;
+  width: 100vw;
+  height: 130vh;
   background-image: url(/image/med.jpg);
   background-position: center; 
   background-size: cover; 
@@ -20,7 +20,7 @@ h1 {
 }
 
 h1:hover {
-  color: yellow;
+  color: red;
 }
 
 
@@ -144,15 +144,15 @@ h1:hover {
 
 .navigation-container {
   text-align: center;
-  margin-top: 25%;
+  margin-top: 5%;
 }
 
 .navigation-link {
   margin-right: 18%;
   text-decoration: none;
-  color: greenyellow;
+  color: red;
   font-weight:bolder;
-  font-size: xx-large;
+  font-size: 3em;
 }
 
 
@@ -186,4 +186,131 @@ button {
   cursor: pointer;
   font-weight: bold;
   
+  
+}
+
+/* Apply general styles for the button */
+.NavLink {
+  align-items: center;
+  padding: 11px 18px;
+  background-color: #3498db;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 5px;
+  margin-right: 3%;
+  margin: 5px;
+ 
+}
+
+
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin-right: 30%;
+}
+
+
+
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 22px;
+  color: black;
+  font-weight: bolder;
+  font-size:1em;
+  
+}
+
+
+
+.medicationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 25px;
+  
+}
+
+.medicationContainer {
+  
+  border: 2px solid blue;
+  padding: 13px;
+  background-color: green;
+  transition: background-color 0.3s; 
+}
+.medicationContainer:hover {
+  background-color: purple; 
+}
+
+
+.orderButton {
+  
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-style: italic;
+  transition: background-color 0.3s; 
+}
+.orderButton:hover {
+  background-color: blue; 
+}
+
+.cancelButton {
+  background-color: black;
+  color: red;
+  padding: 8px 16px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-weight: bold;
+  font-size: large;
+  font-style: italic;
+}
+
+
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  margin-right: 65%;
+  
+}
+
+.card {
+  border: 5px solid blue;
+  padding: 24px;
+  background-color: blueviolet;
+  
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: yellow;
+  margin-bottom: 14px;
+  
+}
+
+.card p {
+  font-size: 30px;
+  color: black;
+  margin-bottom: 14px;
+  font-weight: bolder;
 }

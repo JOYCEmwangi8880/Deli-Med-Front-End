@@ -2,9 +2,20 @@ import {  useNavigate } from 'react-router-dom';
 import React, {useEffect, useState} from 'react'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
+import Modal from 'react-modal'
 
 
 function EditProfile(){
+    //modal for edit popup
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+    }
 
     //get user id and other variables from the local storage for edit
     const id = localStorage.getItem('id')
@@ -58,68 +69,65 @@ function EditProfile(){
         });
 
         return (
-            <>
-              
-              <div className='edit form'>
-                <form onSubmit={formik.handleSubmit} style={{ margin: '30px' }}>
-                  
-                   
-                    <label htmlFor = 'username'> User Name </label>
+            <div className='edit form'>
+              <div>
+                <button onClick={openModal}>Edit Profile</button>
+                <Modal
+                  isOpen={isModalOpen}
+                  onRequestClose={closeModal}
+                  contentLabel='Edit Profile Page'
+                >
+                  <form onSubmit={formik.handleSubmit} style={{ margin: '30px' }}>
+                    <label htmlFor='username'>User Name</label>
                     <input
-                        id = 'username'
-                        name = 'username'
-                        onChange = {formik.handleChange}
-                        value = {formik.values.username}
+                      id='username'
+                      name='username'
+                      onChange={formik.handleChange}
+                      value={formik.values.username}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.username}</p>
-
-                   
-
-                    <label htmlFor = 'email'> Email </label>
+                    <p style={{ color: 'red' }}>{formik.errors.username}</p>
+          
+                    <label htmlFor='email'>Email</label>
                     <input
-                        id = 'email'
-                        name = 'email'
-                        type = 'email'
-                        onChange = {formik.handleChange}
-                        value = {formik.values.email}
+                      id='email'
+                      name='email'
+                      type='email'
+                      onChange={formik.handleChange}
+                      value={formik.values.email}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.email}</p>
-
-                   
-                    <label htmlFor = 'name'> Name </label>                    
+                    <p style={{ color: 'red' }}>{formik.errors.email}</p>
+          
+                    <label htmlFor='name'>Name</label>
                     <input
-                        id = 'name'
-                        name = 'name'
-                        onChange = {formik.handleChange}
-                        value = {formik.values.name}
+                      id='name'
+                      name='name'
+                      onChange={formik.handleChange}
+                      value={formik.values.name}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.name}</p>
-
-
-                    <label htmlFor = 'age'> Age </label>                    
+                    <p style={{ color: 'red' }}>{formik.errors.name}</p>
+          
+                    <label htmlFor='age'>Age</label>
                     <input
-                        id = 'age'
-                        name = 'age'
-                        onChange = {formik.handleChange}
-                        value = {formik.values.age}
+                      id='age'
+                      name='age'
+                      onChange={formik.handleChange}
+                      value={formik.values.age}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.age}</p>
-
-                    <label htmlFor = 'height'> Height </label>                    
+                    <p style={{ color: 'red' }}>{formik.errors.age}</p>
+          
+                    <label htmlFor='height'>Height</label>
                     <input
-                        id = 'height'
-                        name = 'height'
-                        onChange = {formik.handleChange}
-                        value = {formik.values.height}
+                      id='height'
+                      name='height'
+                      onChange={formik.handleChange}
+                      value={formik.values.height}
                     />
-                    <p style = {{color: 'red'}}>{formik.errors.height}</p>
-     
-                    <button type="submit" className="signup-btn">Submit</button>
-      </form>
+                    <p style={{ color: 'red' }}>{formik.errors.height}</p>
+                  </form>
+                  <button onClick={closeModal}>Cancel</button>
+                </Modal>
+              </div>
             </div>
-        </>
-    )
-
-}
-
-export default EditProfile;
+          );
+        }
+        export default EditProfile

@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
+import {  useNavigate } from 'react-router-dom';
 
 function Signup(){
     //refresh age on submit
     const[refreshPage, setRefreshPage] = useState(false);
     const optionsBloodGroups = ['A', 'B', 'AB', 'O'];
+    const navigate = useNavigate()
     //Values before form filling
     const initialValues = {
         username : '',
@@ -28,7 +30,8 @@ function Signup(){
         })
         .then ((res) => {
             if (res.status == 200) {
-                setRefreshPage(!refreshPage);
+                alert('Profile Created Succefully');
+                navigate('/login')
             }
         });
         
@@ -73,6 +76,7 @@ function Signup(){
                     <input
                         id = 'email'
                         name = 'email'
+                        type = 'email'
                         onChange = {formik.handleChange}
                         value = {formik.values.email}
                     />
@@ -83,6 +87,7 @@ function Signup(){
                     <input
                         id = 'password'
                         name = 'password'
+                        type='password'
                         onChange = {formik.handleChange}
                         value = {formik.values.password}
                     />

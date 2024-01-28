@@ -57,6 +57,7 @@ function ProfilePage() {
 
 
      <button onClick={handleLogout}>Logout</button> 
+     {/* <button onClick={handleEditProfile}>Edit Profile</button> */}
      
         </div>
     );

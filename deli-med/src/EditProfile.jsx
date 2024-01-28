@@ -14,13 +14,11 @@ function EditProfile(){
 
 
     const initialValues = {
-        username : '',
-        email : '',
-        name : '',
-        age : 0,
-        height : 0,
-        blood_type : '',
-        previous_illnesses : ''
+        username : localStorage.getItem('username'),
+        email : localStorage.getItem('email'),
+        name : localStorage.getItem('name'),
+        age : localStorage.getItem('age'),
+        height : localStorage.getItem('height'),
     }
 
     // On submit patch method
@@ -49,8 +47,7 @@ function EditProfile(){
         name: yup.string().required('Enter name'),
         age: yup.number().integer(),
         height: yup.number(),
-        blood_type: yup.string(),
-        previous_illnesses: yup.string(),
+        
     })
 
     //formik
@@ -116,38 +113,8 @@ function EditProfile(){
                         value = {formik.values.height}
                     />
                     <p style = {{color: 'red'}}>{formik.errors.height}</p>
-
-                   
-                    <label htmlFor="bloodType">Blood Type:</label>
-                    <select
-                        id="blood_type"
-                        name="blood_type"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.blood_type}
-                    >
-                        <option value="" label="Select type" />
-                        {optionsBloodGroups.map((option) => (
-                            <option key={option} value={option} label={option} />
-                        ))}
-                    </select>
-                    {formik.touched.blood_type && formik.errors.blood_type && (
-                        <div>{formik.errors.blood_type}</div>
-                    )}
-            
-                                    
-                                       
-                    <label htmlFor = 'previousIllnesses'> Previous Illness </label>                    
-                    <input
-                        id = 'previous_illnesses'
-                        name = 'previous_illnesses'
-                        onChange = {formik.handleChange}
-                        value = {formik.values.previous_illnesses}
-                    />
-                    <p style = {{color: 'red'}}>{formik.errors.previous_illnesses}</p>
-
-                    
-                    <button type="submit" className="signup-btn">Signup</button>
+     
+                    <button type="submit" className="signup-btn">Submit</button>
       </form>
             </div>
         </>

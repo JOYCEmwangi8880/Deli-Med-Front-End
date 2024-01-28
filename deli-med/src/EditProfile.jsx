@@ -6,17 +6,7 @@ import Modal from 'react-modal'
 
 
 function EditProfile(){
-    //modal for edit popup
-    const [isModalOpen, setIsModalOpen] = useState(false)
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false)
-    }
-
+   
     //get user id and other variables from the local storage for edit
     const id = localStorage.getItem('id')
     const navigate = useNavigate();
@@ -124,9 +114,7 @@ function EditProfile(){
                     />
                     <p style={{ color: 'red' }}>{formik.errors.height}</p>
                   </form>
-                  <button onClick={closeModal}>Cancel</button>
-                </Modal>
-              </div>
+                </div>
             </div>
           );
         }

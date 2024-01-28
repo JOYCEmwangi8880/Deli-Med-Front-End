@@ -6,8 +6,10 @@ import Logout from './logout';
 import ProfilePage from './ProfilePage';
 import NavBar from './NavBar';
 import About from './About';
+import PreviousOrders from './PreviousOrders'
 import Services from './Services';
 import Contacts from './Contacts';
+import PlaceOrder  from './PlaceOrder';
 import EditProfile from './EditProfile';
 /* import MedicineSelection  from './MedicineSelection'; */
 import TreatmentOptions from './TreatmentOptions';
@@ -40,12 +42,16 @@ function App() {
 
           <Route path="/ProfilePage" element={<ProfilePage />} />
 
+          <Route path="/PreviousOrders" element={<PreviousOrders/>} />
+          <Route path="/PlaceOrder" element={<PlaceOrder/>} />
+         
+
+
 
                 {/* <Route path="/medicine-selection" Component={MedicineSelection} /> */}
                 <Route path="/treatment-options" Component={TreatmentOptions} />
                 <Route path="/edit-profile" Component={EditProfile} />
                 <Route path="/medicine-selection" Component={MedicineSelection} />
-
 
         
           {/* Default Route (you can redirect it to home or any other page) */}

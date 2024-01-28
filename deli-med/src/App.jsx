@@ -11,7 +11,7 @@ import Services from './Services';
 import Contacts from './Contacts';
 import PlaceOrder  from './PlaceOrder';
 import EditProfile from './EditProfile';
-import MedicineSelection  from './MedicineSelection';
+/* import MedicineSelection  from './MedicineSelection'; */
 import TreatmentOptions from './TreatmentOptions';
 import './App.css';
 

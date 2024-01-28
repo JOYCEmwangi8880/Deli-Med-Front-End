@@ -47,7 +47,8 @@ function ProfilePage() {
     
           if (response.ok) {
             alert('Profile Deleted Successfully');
-            window.location.href = "/signup";
+            window.location.href = "/signup"
+            
             
           } else {
             console.error('Failed to delete user:', response.status, response.statusText);

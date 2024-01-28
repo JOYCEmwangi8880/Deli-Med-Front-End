@@ -31,7 +31,7 @@ function Signup(){
                 setRefreshPage(!refreshPage);
             }
         });
-        console.log(values)
+        
     };
     //setting the rules for validation using formik
     const formSchema = yup.object().shape({

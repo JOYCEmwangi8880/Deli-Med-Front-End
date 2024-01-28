@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 import About from './About';
 import Services from './Services';
 import Contacts from './Contacts';
+import EditProfile from './EditProfile';
 import MedicineSelection  from './MedicineSelection';
 import TreatmentOptions from './TreatmentOptions';
 import './App.css';
@@ -39,8 +40,12 @@ function App() {
 
           <Route path="/ProfilePage" element={<ProfilePage />} />
 
-                <Route path="/medicine-selection" component={MedicineSelection} />
-                <Route path="/treatment-options" component={TreatmentOptions} />
+
+                {/* <Route path="/medicine-selection" Component={MedicineSelection} /> */}
+                <Route path="/treatment-options" Component={TreatmentOptions} />
+                <Route path="/edit-profile" Component={EditProfile} />
+                <Route path="/medicine-selection" Component={MedicineSelection} />
+
 
         
           {/* Default Route (you can redirect it to home or any other page) */}

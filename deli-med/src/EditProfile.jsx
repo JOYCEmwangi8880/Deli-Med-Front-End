@@ -25,7 +25,7 @@ function EditProfile(){
     // On submit patch method
     const onSubmit = (values) => {
         
-        fetch( `http://127.0.0.1:5000/auth/signup/${id}`, {
+        fetch( `http://127.0.0.1:5000/users/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json',
@@ -59,14 +59,8 @@ function EditProfile(){
         });
 
         return (
-            <div className='edit form'>
+            <div className='editform'>
               <div>
-                <button onClick={openModal}>Edit Profile</button>
-                <Modal
-                  isOpen={isModalOpen}
-                  onRequestClose={closeModal}
-                  contentLabel='Edit Profile Page'
-                >
                   <form onSubmit={formik.handleSubmit} style={{ margin: '30px' }}>
                     <label htmlFor='username'>User Name</label>
                     <input

@@ -9,7 +9,7 @@ import About from './About';
 import Services from './Services';
 import Contacts from './Contacts';
 import EditProfile from './EditProfile';
-import MedicineSelection  from './MedicineSelection';
+/* import MedicineSelection  from './MedicineSelection'; */
 import TreatmentOptions from './TreatmentOptions';
 import './App.css';
 

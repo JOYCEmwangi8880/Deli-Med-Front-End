@@ -29,7 +29,8 @@ function Signup(){
             body: JSON.stringify(values),
         })
         .then ((res) => {
-            if (res.status == 200) {
+            if (res.status == 201) {
+                console.log(res)
                 alert('Profile Created Succefully');
                 navigate('/login')
             }

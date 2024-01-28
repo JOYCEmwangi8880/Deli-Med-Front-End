@@ -8,7 +8,7 @@ import Modal from 'react-modal'
 function EditProfile(){
    
     //get user id and other variables from the local storage for edit
-    const id = localStorage.getItem('id')
+    
     const navigate = useNavigate();
 
     //other variables editable
@@ -20,12 +20,14 @@ function EditProfile(){
         name : localStorage.getItem('name'),
         age : localStorage.getItem('age'),
         height : localStorage.getItem('height'),
+
     }
 
     // On submit patch method
     const onSubmit = (values) => {
+        const userId = localStorage.getItem('id')
         
-        fetch( `http://127.0.0.1:5000/users/${id}`, {
+        fetch( `http://127.0.0.1:5000/users/${userId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json',
@@ -107,6 +109,7 @@ function EditProfile(){
                       value={formik.values.height}
                     />
                     <p style={{ color: 'red' }}>{formik.errors.height}</p>
+                    <button type="submit" className="edit-profile-btn">Submit</button>
                   </form>
                 </div>
             </div>

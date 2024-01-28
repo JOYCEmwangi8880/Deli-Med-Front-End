@@ -41,6 +41,10 @@ function ProfilePage() {
       <p>Email: {localStorage.getItem('email')}</p>
       <p>Age: {localStorage.getItem('age')}</p>
       <p>Height: {localStorage.getItem('height')}</p>
+
+      <button>
+        <Link to="/edit-profile" className="NavLink">edit profile</Link>
+      </button>
     </div>
   </div>
             
@@ -50,6 +54,8 @@ function ProfilePage() {
         <Link to="/treatment-options" className="NavLink">Health Conditions</Link>
       </button>
 
+
+
       
    
 
@@ -57,6 +63,7 @@ function ProfilePage() {
 
 
      <button onClick={handleLogout}>Logout</button> 
+     {/* <button onClick={handleEditProfile}>Edit Profile</button> */}
      
         </div>
     );

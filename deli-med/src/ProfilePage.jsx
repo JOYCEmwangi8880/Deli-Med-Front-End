@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import axios from 'axios';
+
 
 
 
@@ -31,6 +32,31 @@ function ProfilePage() {
             console.error(error.response.data.message);
         }
     };
+    //Handle delete
+    const deleteUser = async () => {
+        const userId = localStorage.getItem('id');
+        const navigate = useNavigate();
+    
+        try {
+          const response = await fetch(`http://127.0.0.1:5000/users/${userId}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+    
+          if (response.ok) {
+            localStorage.clear()
+            alert('Profile Deleted Successfully');
+            navigate('/signup');
+          } else {
+            console.error('Failed to delete user:', response.status, response.statusText);
+          }
+        } catch (error) {
+          console.error('Error deleting user:', error.message);
+        }
+      };
+    
 
     return (
         <div>
@@ -45,7 +71,7 @@ function ProfilePage() {
     </div>
   </div>
             
-           
+    
             
       <button>
         <Link to="/treatment-options" className="NavLink">Health Conditions</Link>
@@ -58,6 +84,7 @@ function ProfilePage() {
 
 
      <button onClick={handleLogout}>Logout</button> 
+     <button onClick={deleteUser}>Delete Profile</button> 
      
      
         </div>

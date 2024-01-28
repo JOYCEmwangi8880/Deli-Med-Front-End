@@ -5,6 +5,7 @@ import Login from './login';
 import ProfilePage from './ProfilePage';
 import NavBar from './NavBar';
 import About from './About';
+import PreviousOrders from './PreviousOrders'
 import Services from './Services';
 import Contacts from './Contacts';
 import PlaceOrder  from './PlaceOrder';
@@ -35,7 +36,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           
           <Route path="/ProfilePage" element={<ProfilePage />} />
-
+          <Route path="/PreviousOrders" element={<PreviousOrders/>} />
           <Route path="/PlaceOrder" element={<PlaceOrder/>} />
           <Route path="/treatment-options" element={<TreatmentOptions/>} />
 

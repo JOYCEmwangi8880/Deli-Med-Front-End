@@ -89,8 +89,9 @@ h1:hover {
 
 .navbar-links li:hover .hover-content {
   display: block;
-  
+
 }
+
 
 /* Add this to your CSS file or style tag in your React component */
 .studentRegistrationForm {

@@ -34,7 +34,7 @@ function ProfilePage() {
 
     return (
         <div>
-          <div className="card-container">
+     <div className="card-container">
     <div className="card">
       
       <h1>Welcome, {localStorage.getItem('name')}!</h1>
@@ -59,6 +59,7 @@ function ProfilePage() {
 
       
    
+
 
 
 

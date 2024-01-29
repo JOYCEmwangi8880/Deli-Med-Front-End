@@ -70,7 +70,7 @@ function ProfilePage() {
       <p>Height: {localStorage.getItem('height')}</p>
 
       <button>
-        <Link to="/edit-profile" className="NavLink">edit profile</Link>
+        <Link to="/edit-profile" className="NavLink">Edit profile</Link>
       </button>
     </div>
   </div>

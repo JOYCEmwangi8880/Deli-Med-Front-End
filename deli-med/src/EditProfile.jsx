@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import Modal from 'react-modal';
+
 
 function EditProfile() {
     const navigate = useNavigate();

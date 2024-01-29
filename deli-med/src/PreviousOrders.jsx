@@ -5,7 +5,8 @@ function PreviousOrders() {
 
     useEffect(() => {
         // Fetch the first three orders made by the logged-in user
-        fetch(`http://127.0.0.1:5000/orders/user/1`) // Replace 1 with the actual user ID
+        id = localStorage.getItem(id)
+        fetch(`http://127.0.0.1:5000/orders/user/${id}`) // Replace 1 with the actual user ID
             .then(response => response.json())
             .then(data => {
                 // Set the fetched orders to state, limiting to the first three orders

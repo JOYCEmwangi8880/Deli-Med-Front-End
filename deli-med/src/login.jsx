@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'; 
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
+ const [username, setUsername] = useState('');
+ const [password, setPassword] = useState('');
+ const navigate = useNavigate(); 
 
  const handleLogin = async () => {
     try {
@@ -22,8 +20,9 @@ const Login = () => {
      localStorage.setItem('email', response.data.user_data.email)
      localStorage.setItem('height', response.data.user_data.height)
      localStorage.setItem('username', response.data.user_data.username)
-     navigate('/ProfilePage')
-    
+     
+
+      navigate('/ProfilePage'); 
 
     } catch (error) {
       console.error(error);

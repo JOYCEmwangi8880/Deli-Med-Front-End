@@ -11,7 +11,7 @@ import Services from './Services';
 import Contacts from './Contacts';
 import PlaceOrder  from './PlaceOrder';
 import EditProfile from './EditProfile';
-/* import MedicineSelection  from './MedicineSelection'; */
+
 import TreatmentOptions from './TreatmentOptions';
 import './App.css';
 
@@ -51,7 +51,7 @@ function App() {
                 {/* <Route path="/medicine-selection" Component={MedicineSelection} /> */}
                 <Route path="/treatment-options" Component={TreatmentOptions} />
                 <Route path="/edit-profile" Component={EditProfile} />
-                <Route path="/medicine-selection" Component={MedicineSelection} />
+                
 
         
           {/* Default Route (you can redirect it to home or any other page) */}
@@ -61,6 +61,7 @@ function App() {
     </Router>
   );
 }
+export default App;
 
 // Placeholder component for Home
 function Home() {
@@ -79,4 +80,4 @@ function Home() {
   );
 }
 
-export default App;
+

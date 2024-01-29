@@ -9,6 +9,7 @@ const Logout = () => {
 
       console.log(response.data.message);
       localStorage.clear();
+      window.location.href = "/login"
 
     } catch (error) {
       console.error(error.response.data.message);

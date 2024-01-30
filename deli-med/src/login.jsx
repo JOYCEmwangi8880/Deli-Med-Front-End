@@ -7,12 +7,19 @@ const Login = () => {
  const [password, setPassword] = useState('');
  const navigate = useNavigate(); 
 
- const handleLogin = async () => {
+  const handleLogin = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/auth/login', {
-        username: username,
-        password: password,
+      const response = await fetch('http://127.0.0.1:5000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
       });
+<<<<<<< HEAD
     
       
      localStorage.setItem('name', response.data.user_data.name)
@@ -24,11 +31,28 @@ const Login = () => {
 
       navigate('/ProfilePage'); 
 
+=======
+  
+      if (!response.ok) {
+        // Handle non-2xx response status (error)
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const responseData = await response.json();
+  
+      localStorage.setItem('id', responseData.user_data.id);
+      localStorage.setItem('name', responseData.user_data.name);
+      localStorage.setItem('age', responseData.user_data.age);
+      localStorage.setItem('email', responseData.user_data.email);
+      localStorage.setItem('height', responseData.user_data.height);
+      localStorage.setItem('username', responseData.user_data.username);
+  
+      navigate('/ProfilePage');
+>>>>>>> origin/main
     } catch (error) {
       console.error(error);
     }
- };
-
+  };
  
   return (
     <div className="login-container">
@@ -50,5 +74,6 @@ const Login = () => {
   );
 };
 
-
 export default Login;
+
+

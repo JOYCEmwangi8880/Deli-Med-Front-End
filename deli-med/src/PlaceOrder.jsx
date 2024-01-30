@@ -31,7 +31,7 @@ function PlaceOrder() {
         event.preventDefault();
         
         const orderData = {
-            user_id: 1,  // Assuming user ID 1 for demonstration, you should obtain the user ID from the logged-in user
+            user_id: localStorage.getItem(id),  // Assuming user ID 1 for demonstration, you should obtain the user ID from the logged-in user
             medicine_id: selectedMedicine,
             quantity: quantity,
             total_price: parseFloat(selectedMedicine.price) * quantity,

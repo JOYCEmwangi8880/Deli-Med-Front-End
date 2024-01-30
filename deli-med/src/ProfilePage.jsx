@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
+
+
 function ProfilePage() {
     const [user, setUser] = useState(null);
 
@@ -30,16 +33,58 @@ function ProfilePage() {
         }
     };
 
+    const deleteUser = async () => {
+        const userId = localStorage.getItem('id');
+        
+    
+        try {
+          const response = await fetch(`http://127.0.0.1:5000/users/${userId}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+    
+          if (response.ok) {
+            alert('Profile Deleted Successfully');
+            window.location.href = "/signup"
+            
+            
+          } else {
+            console.error('Failed to delete user:', response.status, response.statusText);
+          }
+        } catch (error) {
+          console.error('Error deleting user:', error.message);
+        }
+      };
+
     return (
         <div>
-            <h1>Welcome, {localStorage.getItem('name')}</h1>
-            <p>Username: {localStorage.getItem('username')}</p>
-            <p>Email: {localStorage.getItem('email')}</p>
+     <div className="card-container">
+    <div className="card">
+      
+      <h1>Welcome, {localStorage.getItem('name')}!</h1>
+      <p>Username: {localStorage.getItem('username')}</p>
+      <p>Email: {localStorage.getItem('email')}</p>
+      <p>Age: {localStorage.getItem('age')}</p>
+      <p>Height: {localStorage.getItem('height')}</p>
+
+      <button>
+        <Link to="/edit-profile" className="NavLink">Edit profile</Link>
+      </button>
+    </div>
+  </div>
             
-            <p>Age: {localStorage.getItem('age')}</p>
-            <p>Height: {localStorage.getItem('height')}</p>
-            <Link to="/treatment-options">View Treatment Options</Link>
+           
+            
+      <button>
+        <Link to="/treatment-options" className="NavLink">Health Conditions</Link>
+      </button>
+
+
      <button onClick={handleLogout}>Logout</button> 
+     {/* <button onClick={handleEditProfile}>Edit Profile</button> */}
+     <button onClick={deleteUser} className="deleteProfile">Delete profile</button>
      
         </div>
     );
